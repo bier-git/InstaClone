@@ -1,2 +1,4 @@
-<%= @user.posts.each do |post| %>
+<% @user.posts.each do |post| %>
+    <div><%= link_to(image_tag(post.image, class: "my-image"), post) %></div>
+    <div><%= post.caption %></div>
 <% end %>

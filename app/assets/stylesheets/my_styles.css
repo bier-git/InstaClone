@@ -1,6 +1,25 @@
 .my-image {
-
-    width: 150px;
+    width: 100%;
     height: auto;
+}
 
+.post-container{
+    display: flex;
+    width: 400px;
+    margin: auto;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card {
+    margin: auto;
+    margin-bottom: 25px;
+}
+
+.card-body {
+    background-color: dimgrey;
+}
+
+.card-text {
+    color: white                                                                            ;
 }

@@ -1,6 +1,16 @@
+<div class="post-container">
+
 <%@posts.each do |post| %>
-    <div><%= image_tag post.image, class: "my-image" %>
-    <p><%= post.caption %></p>
-    <%= button_to 'Like', {:controller => "likes", :action => "create", :post_id => post.id} , :method=>:post  %>
-    <%= "Likes: #{post.likes.length}" %></div>
+        <div class="card" style="width: 18rem;">
+            <%= link_to(image_tag(post.image, class: "my-image"), post) %> <%# it links the image, which is in (), to the post as a second argument. you could use the path "/posts..." but in this case rails figures out the path. the post is without @ becuase it refers to the variable "post" which comes out the each loop. %>
+                <div class="card-body">
+                    <p class="card-text"><%= post.caption %></p> 
+                </div>
+
+        <%= button_to 'Like', {:controller => "likes", :action => "create", :post_id => post.id} , :method=>:post  %>
+        <%= "Likes: #{post.likes.length}" %>
+        </div>
+
 <% end %> 
+
+</div>

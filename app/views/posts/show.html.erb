@@ -1,2 +1,6 @@
 <%= image_tag @post.image, class: "my-image" %>
 <p><%= @post.caption %></p>
+<% if current_user == @post.user %>
+    <%= button_to "Delete", @post, method: :delete  %> <%# An zweiter Stelle könnte man auch "/posts/#{post_id}" schreiben, oder post_path(@post) oder post_path(@post.id). Der Request geht an den Controller und er weiß, dass für Post der Path zum PostController führt. %>
+    <%= button_to "Edit", edit_post_path(@post), method: :get %> <%# "/posts/#{@post.id}/edit" anstelle von edit_post_path(@post) also works. The method has to be :get, weil wir zu einer Seite lenken, was ein GET request ist, weil es nichts submitted.
+<% end %>
